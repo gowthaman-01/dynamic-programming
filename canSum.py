@@ -1,4 +1,4 @@
-# Standard Time: O(len(nums) ^ target) Space: O(target)
+# Standard Time: O(len(nums) ^ target) | Space: O(target)
 def canSum(nums: list, target: int):
     if target == 0: return True
     if target < 0: return False
@@ -7,7 +7,7 @@ def canSum(nums: list, target: int):
             return True
     return False
 
-# Memoization Time: O(len(nums) * target) Space: O(target)
+# Memoization Time: O(len(nums) * target) | Space: O(target)
 def canSumMem(nums: list, target: int, mem: dict):
     if target == 0: return True
     if target < 0: return False
@@ -19,7 +19,7 @@ def canSumMem(nums: list, target: int, mem: dict):
     mem[target] = False
     return False
 
-# Tabulation Time: O(len(nums) * target) Space: O(target)
+# Tabulation Time: O(len(nums) * target) | Space: O(target)
 def canSumTab(nums: list, target: int):
     dp = [False for i in range(target + 1)]
     dp[0] = True

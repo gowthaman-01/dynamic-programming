@@ -1,10 +1,10 @@
-# Standard Time: O(2 ^ (m + n)) Space: O(m + n)
+# Time: O(2 ^ (m + n)) | Space: O(m + n)
 def gridTraveler(n: int, m: int):
     if n == 0 or m == 0: return 0
     if n == 1 and m == 1: return 1
     return gridTraveler(n - 1, m) + gridTraveler(n, m - 1)
 
-# Memoization Time: O(m * n) Space: O(m + n)
+# Memoization | Time: O(m * n) | Space: O(m + n)
 def gridTravelerMemo(n: int, m: int, mem = {}): 
     if n == 0 or m == 0: return 0
     if n == 1 and m == 1: return 1
@@ -13,7 +13,7 @@ def gridTravelerMemo(n: int, m: int, mem = {}):
     mem[(n, m)] = gridTravelerMemo(n - 1, m) + gridTravelerMemo(n, m - 1)
     return mem[(n, m)]
 
-# Tabulation Time: O(m * n) Space: O(m * n)
+# Tabulation | Time: O(m * n) | Space: O(m * n)
 def gridTravelerTab(n: int, m: int):
     dp = [[0 for i in range(m)] for i in range(n)]
     dp[0][0] = 1

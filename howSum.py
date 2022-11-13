@@ -1,4 +1,4 @@
-# Standard Time: O(len(nums) ^ target * target) Space: O(target)
+# Time: O(len(nums) ^ target * target) | Space: O(target)
 def howSum(target: int, nums: list):
     if target == 0: return []
     if target < 0: return None
@@ -9,7 +9,7 @@ def howSum(target: int, nums: list):
             return pos
     return None
 
-# Memoization O(len(nums) * target * target) Space: O(target * target)
+# Memoization | Time: O(len(nums) * target * target) | Space: O(target * target)
 def howSumMem(target: int, nums: list, mem: dict):
     if target == 0: return []
     if target < 0: return None
@@ -23,7 +23,7 @@ def howSumMem(target: int, nums: list, mem: dict):
     mem[target] = None
     return None
 
-# Tabulation Time: O(len(nums) * target * target) Space O(target * target)
+# Tabulation | Time: O(len(nums) * target * target) | Space: O(target * target)
 def howSumTab(target: int, nums: list):
     dp = [None for i in range(target + 1)]
     dp[0] = []
@@ -34,8 +34,8 @@ def howSumTab(target: int, nums: list):
     return dp[-1]
                 
             
-print(howSumTab(7, [2, 1]))
-print(howSumTab(7, [5, 3, 4, 7]))
-print(howSumTab(7, [2, 4]))
-print(howSumTab(8, [3, 5, 2]))
-print(howSumTab(300, [7, 14]))
+# print(howSumTab(7, [2, 1]))
+# print(howSumTab(7, [5, 3, 4, 7]))
+# print(howSumTab(7, [2, 4]))
+# print(howSumTab(8, [3, 5, 2]))
+# print(howSumTab(300, [7, 14]))
